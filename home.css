@@ -1,0 +1,11 @@
+body {
+    background-color: #333333;
+    font-family: "Open Sans", Helvetica;
+    text-align: center;
+    background-image: url("img/bg-home.png");
+    background-repeat: no-repeat;
+  }
+
+  #wrapper {
+      margin-top: 100px;
+  }

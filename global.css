@@ -1,0 +1,11 @@
+#navbar {
+    position: absolute;
+    height: 50%;
+    width: 200px;
+    margin-top: 120px;
+}
+
+.menuBTN {
+    cursor: pointer;
+    height: 40px;
+}

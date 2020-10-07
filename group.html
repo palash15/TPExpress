@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+  <!--<link href="styles.css" rel="stylesheet">-->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="styles.css">
+  <link href="global.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.js"></script>
+
+  <script src="gauge.js"></script>
+
+  <style>
+    input {
+      text-align: right;
+    }
+  </style>
+  <title>Input</title>
+
+</head>
+
+
+
+<body>
+
+  <div id="navbar" style="margin-top: 30px">
+    <div class="menuBTN" onclick="window.location='home.html'"></div>
+    <div class="menuBTN" onclick="window.location='group.html'"></div>
+    <div class="menuBTN" onclick="window.location='action.html'"></div>
+  </div>
+
+
+  <div id="wrapper">
+    <div class="generalInfo">
+      <h3>General Company Information<h3>
+
+          <label>
+            <input type="text" required />
+            <div class="label-text">Name of Ultimate Parent </div>
+          </label>
+          <label>
+            <input type="text" required />
+            <div class="label-text">Total FTEs </div>
+          </label>
+          <label>
+            <input type="text" required />
+            <div class="label-text"> Year of financial data </div>
+          </label>
+          <label>
+            <input class="dateinput" required />
+            <div class="label-text"> Financial year end date </div>
+          </label>
+          <button class="generalBtn subBtn">Next</button>
+    </div>
+
+    <div class="numberEntities is-hidden">
+      <h3>Number of the following entities<h3>
+
+          <label>
+            <input type="text" required />
+            <div class="label-text">LRD </div>
+          </label>
+          <label>
+            <input type="text" required />
+            <div class="label-text">Manuf. </div>
+          </label>
+          <label>
+            <input type="text" required />
+            <div class="label-text"> IPC </div>
+          </label>
+          <label>
+            <input type="text" required />
+            <div class="label-text"> RSP </div>
+          </label>
+          <button class="numbersBtn subBtn">Next</button>
+
+    </div>
+
+    <div class="financialData is-hidden">
+      <h3>Group Financial Data<h3>
+
+          <label>
+            <input type="text" name="" id="nr-group" required />
+            <div class="label-text">Net Revenues </div>
+          </label>
+          <label>
+            <input type="text" name="" id="cogs-group" required />
+            <div class="label-text">Cost of Goods Sold </div>
+          </label>
+          <label>
+            <input type="text" name="" id="pe-group" required />
+            <div class="label-text"> Personnel Expenses </div>
+          </label>
+          <label>
+            <input type="text" name="" id="da-group" required />
+            <div class="label-text"> Depreciation and Amortization</div>
+          </label>
+          <label>
+            <input type="text" name="" id="ooe-group" required />
+            <div class="label-text"> Other Operating Expenses</div>
+          </label>
+
+          <button class="financialBtn subBtn">Next</button>
+
+    </div>
+    <div class="entityLevel is-hidden">
+      <h2>Entity Level<h2>
+          <h3>General Company Info<h3>
+
+              <label>
+                <input type="text" required />
+                <div class="label-text">Name of tested LRD </div>
+              </label>
+              <label>
+                <input type="text" required />
+                <div class="label-text">Is company involved in a intercompany cross-border transaction? </div>
+              </label>
+              <label>
+                <input type="text" required />
+                <div class="label-text"> Type of tested company </div>
+              </label>
+              <label>
+                <input type="text" name="" id="country-lrd" required />
+                <div class="label-text"> Country of residence LRD </div>
+              </label>
+              <label>
+                <input type="text" name="" id="country-counterparty" required />
+                <div class="label-text"> Counterparty country of LRD's</div>
+              </label>
+              <label>
+                <input type="text" required />
+                <div class="label-text"> Number of Full time employees </div>
+              </label>
+              <label>
+                <input type="text" required />
+                <div class="label-text"> Operating Currency </div>
+              </label>
+              <label>
+                <input type="text" required />
+                <div class="label-text"> If this transaction documented </div>
+              </label>
+              <button class="entityBtn subBtn">Next</button>
+
+    </div>
+
+    <div class="financialDataEn is-hidden">
+      <h3>Financial Data (Entity)<h3>
+
+          <label>
+            <input type="number" name="" id="nr-lrd" required />
+            <div class="label-text">Net Revenues </div>
+          </label>
+          <label>
+            <input type="number" name="" id="cogs-lrd" required />
+            <div class="label-text">Cost of Goods Sold </div>
+          </label>
+          <label>
+            <input type="number" name="" id="pe-lrd" required />
+            <div class="label-text"> Personnel Expenses </div>
+          </label>
+          <label>
+            <input type="number" name="" id="da-lrd" required />
+            <div class="label-text"> Depreciation and Amortization</div>
+          </label>
+          <label>
+            <input type="number" name="" id="ooe-lrd" required />
+            <div class="label-text"> Other Operating Expenses</div>
+          </label>
+          <button class="financialEnBtn subBtn">Next</button>
+    </div>
+
+    <div class="targetProfitEn is-hidden">
+      <h3>Target Profit for Entities</h3>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="lrd-lower" required />
+        <div class="label-text">Remuneration lower bound (e.g.,from database search) </div>
+      </label>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="lrd-upper" required />
+        <div class="label-text">Remuneration upper bound (e.g.,from database search) </div>
+      </label>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="intangible-lower" required />
+        <div class="label-text"> Intangible-related return lower bound </div>
+      </label>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="intangible-upper" required />
+        <div class="label-text"> Intangible-related return upper bound</div>
+      </label>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="other-lower" required />
+        <div class="label-text"> Other aspects lower bound</div>
+      </label>
+      <label>
+        <input class="percent" type="number" step="0.1" name="" id="other-upper" required />
+        <div class="label-text"> Other aspects upper bound</div>
+      </label>
+      <button class="targetBtn subBtn">Submit</button>
+    </div>
+
+    <div class="targetOutput is-hidden">
+      <h3>Result of analysis</h3>
+      <label>
+        <div id="epl-group"></div>
+        <div class="label-text"> Expected Profit Level (Group) </div>
+      </label>
+      <label>
+        <div id="epl-lrd"></div>
+        <div class="label-text"> Expected Profit Level (Entity)</div>
+      </label>
+      <label>
+        <div id="epm-group"></div>
+        <div class="label-text"> Expected Profit Margin (Group) </div>
+      </label>
+      <label>
+        <div id="epm-lrd"></div>
+        <div class="label-text"> Expected Profit Margin (Entity)</div>
+      </label>
+      <label>
+        <div id="target-lower"></div>
+        <div class="label-text"> Target profit margin for LRD lower bound</div>
+      </label>
+      <label>
+        <div id="target-higher"></div>
+        <div class="label-text"> Target profit margin for LRD upper bound</div>
+      </label>
+      <label>
+        <div id="lrd-assessment"></div>
+        <div class="label-text"> LRD Assessment</div>
+      </label>
+      <label>
+        <div id="intangible-assessment"></div>
+        <div class="label-text"> Intangible Assessment</div>
+      </label>
+      <label>
+        <div id="other-assessment"></div>
+        <div class="label-text"> Additional Return Assessment</div>
+      </label>
+      <label>
+        <div id="target-assessment"></div>
+        <div class="label-text"> Overall Target Assessment</div>
+      </label>
+
+
+    </div>
+
+  </div> <!-- close the wrapper div here -->
+
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0/dist/Chart.bundle.min.js"></script>
+
+
+  <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.3.1.min.js"><\/script>')</script>
+  <script src="main.js"></script>
+
+  <script>
+    var a = document.querySelector.bind(document);
+    function getValue(el) {
+      return parseFloat(document.querySelector(el).value);
+    }
+    function calculateTransferPricing() {
+      let clrd = a('#country-lrd').value;
+      let ccpt = a('#country-counterparty').value;
+      let lrdLower = getValue('#lrd-lower');
+      let lrdUpper = getValue('#lrd-upper');
+      let intangibleLower = getValue('#intangible-lower');
+      let intangibleUpper = getValue('#intangible-upper');
+      let otherLower = getValue('#other-lower');
+      let otherUpper = getValue('#other-upper');
+      let targetLower = lrdLower + intangibleLower + otherLower;
+      let targetUpper = lrdUpper + intangibleUpper + otherUpper;
+      a('#target-lower').innerHTML = targetLower;
+      a('#target-higher').innerHTML = targetUpper;
+      let eplLrd = getValue('#nr-lrd') - (getValue('#cogs-lrd') + getValue('#pe-lrd') + getValue('#da-lrd') + getValue('#ooe-lrd'));
+      let eplGroup = getValue('#nr-group') - (getValue('#cogs-group') + getValue('#pe-group') + getValue('#da-group') + getValue('#ooe-group'));
+      let epmLrd = eplLrd / getValue('#nr-lrd') * 100;
+      let epmGroup = eplGroup / getValue('#nr-group') * 100;
+      a('#epl-lrd').innerHTML = isNaN(eplLrd) ? "" : eplLrd;
+      a('#epl-group').innerHTML = isNaN(eplGroup) ? "" : eplGroup;
+      a('#epm-lrd').innerHTML = isNaN(epmLrd) ? "" : epmLrd + '%';
+      a('#epm-group').innerHTML = isNaN(epmGroup) ? "" : epmGroup + '%';
+
+      a('#lrd-assessment').innerHTML = lrdAssessment(lrdLower, lrdUpper, clrd, ccpt);
+      a('#intangible-assessment').innerHTML = intangibleAssessment(intangibleLower, intangibleUpper, clrd, ccpt);
+      a('#other-assessment').innerHTML = otherAssessment(otherLower, otherUpper, clrd, ccpt);
+      a('#target-assessment').innerHTML = targetAssessment(targetLower, targetUpper, epmLrd, clrd, ccpt);
+    }
+    function lrdAssessment(lower, upper, clrd, ccpt) {
+      let message;
+      if (lower > upper) {
+        message = "Error in Range";
+      } else {
+        if (lower >= 4.1 || upper > 10) {
+          message = `Please be careful, targeted operating margin seems high also in comparison to group margin. Challenge is in ${ccpt}`;
+        } else {
+          if (lower > 2) {
+            message = "Targeted operating margin looks fairly standard";
+          } else {
+            if (lower >= 0) {
+              message = `Targeted operating margin seems low and should be further substantiated. Challenge is in ${clrd}`;
+            } else {
+              message = `Please be careful, a negative operating margin should generally not be targeted for an LRD entity. Challenge is in ${clrd}`;
+            }
+          }
+        }
+      }
+      return `<span>${message}</span>`;
+    }
+
+    function intangibleAssessment(lower, upper, clrd, ccpt) {
+      let message;
+      if (lower > upper) {
+        message = "Error in Range";
+      } else {
+        if (lower >= 2 || upper > 15) {
+          message = `Regarding intangible assets: Please be careful, your input indicates disposal over substantial intangible assets. Is this entity still routine? Challenge is in ${ccpt}`;
+        } else {
+          if (lower > 0.1) {
+            message = `Regarding intangible assets: Please be careful, are you sure that the LRD has disposal over unique and valuable intangible assets (e.g., customer base)? Challenge is in ${ccpt}`;
+          } else {
+            if (lower > 0) {
+              message = "Regarding intangible assets: This looks plausible. A routine entity is typically not expected to earn a separate intangible-related return.";
+            } else {
+              message = `Regarding intangible assets: Please be careful, a negative intangible-related return requires explanation. Challenge is in ${clrd}`;
+            }
+          }
+        }
+      }
+      return `<span>${message}</span>`;
+    }
+
+    function otherAssessment(lower, upper, clrd, ccpt) {
+      let message;
+      if (lower > upper) {
+        message = "Error in Range";
+      } else {
+        if (lower > 0.1 || upper > 0.5) {
+          message = `Regarding additional return: Please be careful and provide reasons for the assumption of additional return. Challenge is in ${ccpt}`;
+        } else {
+          if (lower > 0) {
+            message = "Regarding additional return: This looks plausible";
+          } else {
+            message = `Regarding additional return: Please review your input, a negative adjustment requires explanation. Challenge is in ${clrd}`;
+          }
+        }
+      }
+      return `<span>${message}</span>`;
+    }
+
+    function targetAssessment(lower, upper, epmLrd, clrd, ccpt) {
+      let message;
+      if (epmLrd >= lower && epmLrd <= upper) {
+        message = "Regarding LRD versus Group return: Your transfer pricing looks plausible. The expected operating margin of the LRD falls within the target range. However, never forget to compare also with expected operating margin of the Group";
+      } else {
+        if (epmLrd < lower) {
+          message = `Regarding LRD versus Group return: Please review your transfer pricing. The expected operating margin of the LRD is above the target range. Challenge is in ${clrd}`;
+        } else {
+          message = `Regarding LRD versus Group return: Please review your transfer pricing. The expected operating margin of the LRD is above the target range. Challenge is in ${ccpt}`;
+        }
+      }
+      return `<span>${message}</span>`;
+    }
+
+    $(".targetBtn").click(e => {
+      e.preventDefault();
+      calculateTransferPricing();
+    });
+  </script>
+
+    </body>
+</html>

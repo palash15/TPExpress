@@ -1,0 +1,12 @@
+body {
+    background-color: #333333;
+    font-family: "Open Sans", Helvetica;
+    text-align: center;
+    background-image: url("img/bg-action.png");
+    background-repeat: no-repeat;
+  }
+
+  #wrapper {
+      margin-top: 500px;
+      margin-left: 875px;
+  }
